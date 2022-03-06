@@ -1,34 +1,36 @@
-Single Photon Timing Analysis && Timing Calibration Code
---------------------------------------------------------
-      Developed by: Alan Kahn  (alan.kahn@cern.ch), ~2018
+# Single Photon Timing Analysis && Timing Calibration Code
+Developed by: Alan Kahn  (alan.kahn@cern.ch), ~2018
 
 This code needs ROOT to be setup in order to run:
 
+```
 setupATLAS
 lsetup root
+```
 
 This directory contains two code packages:
+
 1. Timing Analysis
 2. Calibration Analysis
 
-Timing Analysis
----------------
+## Timing Analysis
+
 This code is to make analysis plots similar plots to those found in the Run 1 paper, i.e. Delta Z, t_gamma, etc.
 
 The relevant files for the timing analysis are the following:
 
 Run/NtupleCode/TimingAnalysis.C --- Main/Analysis code
-Run with ./runTimingAnalysis.sh in the Run/ directory.
+Run with ``` ./runTimingAnalysis.sh ``` in the Run/ directory.
 
 Output is saved to Run/NtuplePlots/exot6_plots.root
 
-Calibration Analysis
-====================
+## Calibration Analysis
+
 This code is to calibrate the timing of low gain photons in the 2016 data. 
 
 CalibrationAnalysis/Root/CalibrationAnalysis.C
 
-Run with ./runCalibrationAnalysis in the Run/ directory.
+Run with ``` ./runCalibrationAnalysis.sh ``` in the Run/ directory.
 
 Output is saved to Run/NtuplePlots/calibration_exot6.root
 
@@ -90,10 +92,7 @@ Validation Loop: This applies all corrections on a different set of photons than
 THIS CODE TAKES A WHILE TO RUN since it has to run again and again for each pass. To make things faster, I have saved the pass 1 and 2 profile plots
 	into a root file (CalibrationAnalysis/Data/corrections/2016_corrections.root) and I just load them instead of calculating them each time I run the code.
 
-----------------------------------------------------
-
-Plotting Macros
----------------
+## Plotting Macros
 
 I also included some plotting macros in the Run/NtupleCode directory, listed as makePNGs.C and fit.C
 
